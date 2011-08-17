@@ -1,0 +1,40 @@
+set complete=ltf
+set "editor=urxvt -e vim -f"
+" set guioptions+=n
+set titlestring="Firefox"
+set newtab=all
+set runtimepath=/home/raph/.vimperator
+set scroll=6
+" set wildoptions="auto,sort"
+set wildmode=list:full 
+set preload
+
+set ic
+set hlsearch
+remap <C-j> <C-p> 
+remap <C-k> <C-n> 
+
+" autocmd PageLoad http://reader.livedoor.com/reader.* js vimperator.modes.passAllKeys=true;
+" autocmd TabSelect http://reader.livedoor.com/reader.* js vimperator.modes.passAllKeys=true;
+" autocmd TabLeave http://reader.livedoor.com/reader.* js vimperator.modes.passAllKeys=false; 
+autocmd LocationChange .* js modes.passAllKeys = /rfournier\.homelinux\.org\/ttrss/.test(buffer.URL)
+
+" javascript <<EOF
+" (function(){
+" var feedPanel = document.createElement("statusbarpanel");
+" feedPanel.setAttribute("id", "feed-panel-clone");
+" feedPanel.appendChild(document.getElementById("feed-button"));
+" feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
+" document.getElementById("status-bar")
+" .insertBefore(feedPanel, document.getElementById("security-button"));
+" })();
+" EOF
+
+" colorscheme myzenburn
+colorscheme zenburn.perso
+" colorscheme grassofhust-zenburn
+
+" source! /home/raph/.vimperatorrc.local
+" source! /home/raph/.vimperator/ui
+
+" vim: set ft=vimperator:
