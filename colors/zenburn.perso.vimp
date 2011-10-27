@@ -102,13 +102,15 @@ margin-top: -1px !important;
  min-height: 21px !important;
  background: #4e4e4e !important;
 }
-
-.tabbrowser-tab {
- -moz-appearance: none !important;
- -moz-border-radius: 0px !important;
+/*
  margin:0 -1px !important;
  padding:0 !important;
  border-right: 0 !important;
+ margin:0 !important;
+*/
+.tabbrowser-tab {
+ -moz-appearance: none !important;
+ -moz-border-radius: 0px !important;
  font-family: monospace !important;
  font-size: 10pt !important;
  color: #d7d7af !important;
@@ -124,7 +126,6 @@ margin-top: -1px !important;
 .tabbrowser-tab .tab-text {
  border:0px !important;
 }
-
 .tabbrowser-arrowscrollbox {
  max-height: 21px !important;
  background: #4e4e4e !important;
